@@ -39,7 +39,7 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </Label>
-                  <ComboBox fx:id="ingrediente" prefWidth="150.0">
+                  <ComboBox fx:id="ingrediente" onAction="#setHacerPedidoButton" prefWidth="150.0">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                            <String fx:value="Queso" />
@@ -58,12 +58,12 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <ComboBox fx:id="complemento" prefWidth="150.0">
+                  <ComboBox fx:id="complemento" onAction="#setHacerPedidoButton" prefWidth="150.0">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="Queso-Oaxaca" />
+                           <String fx:value="Queso Oaxaca" />
                            <String fx:value="Chapulines" />
-                           <String fx:value="Ninguna" />
+                           <String fx:value="Ninguno" />
                         </FXCollections>
                      </items>
                      <VBox.margin>
@@ -126,7 +126,7 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </Label>
-                  <ComboBox fx:id="cantidad" prefWidth="150.0">
+                  <ComboBox fx:id="cantidad" onAction="#setHacerPedidoButton" prefWidth="150.0">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                            <String fx:value="1" />
@@ -150,7 +150,7 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" onAction="#setHacerPedidoButton" text="Hacer Pedido">
+                  <Button mnemonicParsing="false" onAction="#formarTexto" text="Hacer Pedido">
                      <VBox.margin>
                         <Insets left="15.0" top="60.0" />
                      </VBox.margin>

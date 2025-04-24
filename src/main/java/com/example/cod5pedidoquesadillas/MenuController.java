@@ -58,8 +58,29 @@ public class MenuController {
         queca.setPara(llevarValue, comerAquiValue);
         queca.setSalsa(verdeValue, rojaValue);
         queca.calcularPrecio();
-        precio.setText(String.valueOf(queca.getPrecio()));
-        precio.setText("$" + precioValue);
-        texto.setText(String.format("%d quesadilla(s) de %s con %s %s para %s%nTotal: %d", queca.getCantidad(), queca.getIngrediente(),queca.getComplemento(), queca.getSalsa(), queca.getPara(), queca.getPrecio()));
+        precio.setText("$" + queca.getPrecio());
+        //texto.setText(String.format("%d quesadilla(s) de %s con %s %s para %s%nTotal: %d", queca.getCantidad(), queca.getIngrediente(),queca.getComplemento(), queca.getSalsa(), queca.getPara(), queca.getPrecio()));
+    }
+
+    @FXML
+    public void formarTexto(ActionEvent event) {
+            int cantidadValue = Integer.parseInt(cantidad.getValue());
+            String ingredienteValue = ingrediente.getValue();
+            String complementovalue = complemento.getValue();
+            boolean verdeValue = verde.isSelected();
+            boolean rojaValue = roja.isSelected();
+            boolean llevarValue = llevar.isSelected();
+            boolean comerAquiValue = comerAqui.isSelected();
+            String precioValue = String.valueOf(queca.getPrecio());
+
+            queca.setCantidad(cantidadValue);
+            queca.setComplemento(complementovalue);
+            queca.setIngrediente(ingredienteValue);
+            queca.setPara(llevarValue, comerAquiValue);
+            queca.setSalsa(verdeValue, rojaValue);
+            queca.calcularPrecio();
+            //precio.setText(String.valueOf(queca.getPrecioYCantidad()));
+            precio.setText("$" + queca.getPrecio());
+            texto.setText(String.format("%d quesadilla(s) de %s con %s %s para %s%nTotal: %d", queca.getCantidad(), queca.getIngrediente(),queca.getComplemento(), queca.getSalsa(), queca.getPara(), queca.getPrecio()));
     }
 }

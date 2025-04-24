@@ -2,7 +2,7 @@ package com.example.cod5pedidoquesadillas;
 
 public class Quesadilla {
     private int precio;
-    public int cantidad;
+    public int cantidad= 1;
     public String ingrediente;
     public String complemento;
     public String salsa;
@@ -43,7 +43,7 @@ public class Quesadilla {
 
     public void calcularPrecio() {
         this.precio = 40;
-        if (complemento.equals("Queso-Oaxaca"))
+        if (complemento.equals("Queso Oaxaca"))
             this.precio = (40+20)*cantidad;
         else if (complemento.equals("Chapulines"))
             this.precio = (40+30)*cantidad;
@@ -74,4 +74,5 @@ public class Quesadilla {
     public int getPrecio() {
         return precio;
     }
+
 }
